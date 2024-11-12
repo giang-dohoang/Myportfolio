@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="\css\style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="\assets\G.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#game">Game</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="\assets\ME.JPG" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1>Hi! I am Giang</h1>
+                <h2>Game Designer</h2>
+                <p>Welcome to my portfolio! I'm a passionate web developer with experience in creating responsive and
+                    user-friendly websites.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Section -->
+    <section class="game-section">
+        <h2 class="game-title">GAMES</h2>
+        <div class="game-container">
+            <div class="game-card">
+                <img src="\assets\Adventure-rabbit.png" alt="Game 1 Preview">
+                <div class="game-overlay">
+                    <p class="game-text">Adventure Rabbit</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="\assets\G2.png" alt="Game 2 Preview">
+                <div class="game-overlay">
+                    <p class="game-text">Game 2</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="\assets\G3.png" alt="Game 3 Preview">
+                <div class="game-overlay">
+                    <p class="game-text">Game 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="gameModal1" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="game-modal-container">
+                <div class="game-modal-image">
+                    <img src="\assets\Adventure-rabbit.png" alt="Game 1 Detail">
+                </div>
+                <h3 class="game-modal-title">Adventure Rabbit</h3>
+                <div class="game-modal-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat </p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=WcIQPGKzwVQ" target="_blank" class="play-button">
+                    <span class="button-text">Video GamePlay</span>
+                    <span class="button-icon">▶</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="gameModal2" class="modal">
+        <!-- Modal content for Game 2 -->
+    </div>
+    <div id="gameModal3" class="modal">
+        <!-- Modal content for Game 3 -->
+    </div>
+
+    <!-- Add this to your existing JavaScript or create a new file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gameCards = document.querySelectorAll('.game-card');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.close-button');
+
+            // Mở modal
+            gameCards.forEach((card, index) => {
+                card.addEventListener('click', function () {
+                    modals[index].style.display = 'block';
+                    document.body.classList.add('modal-open'); // Thêm class để ngăn scroll
+                });
+            });
+
+            // Đóng modal bằng nút close
+            closeButtons.forEach((button, index) => {
+                button.addEventListener('click', function () {
+                    modals[index].style.display = 'none';
+                    document.body.classList.remove('modal-open'); // Xóa class
+                });
+            });
+
+            // Đóng modal khi click bên ngoài
+            window.addEventListener('click', function (event) {
+                modals.forEach((modal) => {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                        document.body.classList.remove('modal-open'); // Xóa class
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
