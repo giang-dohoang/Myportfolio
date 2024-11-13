@@ -31,16 +31,17 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="home">
         <div class="profile-container">
             <div class="profile-image">
                 <img src="./assets/ME.JPG" alt="Profile Picture">
+                <a href="./cv/CV Game Designer.pdf" target="_blank" class="cv-overlay"><span>Seen CV</span></a>
             </div>
             <div class="profile-info">
                 <h1>Hi! I am Giang</h1>
                 <h2>Game Designer</h2>
-                <p>Welcome to my portfolio! I'm a passionate web developer with experience in creating responsive and
-                    user-friendly websites.</p>
+                <p>Là một người đam mê thiết kế và sáng tạo Game, tôi mong muốn được mang trò chơi của tôi đến tất cả
+                    mọi người và được cống hiến cho ngành Game Việt Nam phát triển hơn.</p>
             </div>
         </div>
     </main>
@@ -48,6 +49,7 @@
     <!-- Game Section -->
     <section class="game-section">
         <h2 class="game-title">GAMES</h2>
+        <div class="subtitle">PORTFOLIO</div>
         <div class="game-container">
             <div class="game-card">
                 <img src="./assets/Adventure-rabbit.png" alt="Game 1 Preview">
@@ -56,15 +58,15 @@
                 </div>
             </div>
             <div class="game-card">
-                <img src="./assets/G2.png" alt="Game 2 Preview">
+                <img src="./assets/Game Chistmas.jpg" alt="Game 2 Preview">
                 <div class="game-overlay">
-                    <p class="game-text">Game 2</p>
+                    <p class="game-text">Game Chistmas</p>
                 </div>
             </div>
             <div class="game-card">
-                <img src="./assets/G3.png" alt="Game 3 Preview">
+                <img src="./assets/Endless Journey.png" alt="Game 3 Preview">
                 <div class="game-overlay">
-                    <p class="game-text">Game 3</p>
+                    <p class="game-text">Endless Journey</p>
                 </div>
             </div>
         </div>
@@ -107,6 +109,8 @@
             const gameCards = document.querySelectorAll('.game-card');
             const modals = document.querySelectorAll('.modal');
             const closeButtons = document.querySelectorAll('.close-button');
+            const profileImage = document.querySelector('.profile-image');
+            const cvOverlay = document.querySelector('.cv-overlay');
 
             // Mở modal
             gameCards.forEach((card, index) => {
@@ -133,6 +137,32 @@
                     }
                 });
             });
+
+            // Function to toggle the profile image opacity
+            function toggleImageOpacity() {
+                profileImage.classList.toggle('dim'); // Add a class to dim the image
+            }
+
+            // Show overlay and dim image every 5 seconds
+            setInterval(() => {
+                toggleImageOpacity();
+            }, 2000); // 5000 milliseconds = 5 seconds
+
+            // Initial call to set the image opacity
+            toggleImageOpacity();
+
+            // Hàm để chuyển đổi hiển thị của overlay
+            function toggleOverlay() {
+                cvOverlay.classList.toggle('show'); // Chuyển đổi hiển thị của overlay
+            }
+
+            // Hiện overlay mỗi 3 giây
+            setInterval(() => {
+                toggleOverlay(); // Hiện overlay
+                setTimeout(() => {
+                    toggleOverlay(); // Ẩn overlay sau 3 giây
+                }, 3000); // 3000 milliseconds = 3 giây
+            }, 6000); // 6000 milliseconds = 6 giây (3 giây hiển thị + 3 giây ẩn)
         });
     </script>
 </body>
