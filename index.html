@@ -51,19 +51,20 @@
         <h2 class="game-title">GAMES</h2>
         <div class="subtitle">PORTFOLIO</div>
         <div class="game-container">
-            <div class="game-card">
+            <div class="game-card" onclick="openModal('gameModal1')">
                 <img src="./assets/Adventure-rabbit.png" alt="Game 1 Preview">
                 <div class="game-overlay">
                     <p class="game-text">Adventure Rabbit</p>
                 </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" onclick="openModal('gameModal2')">
                 <img src="./assets/Game Chistmas.jpg" alt="Game 2 Preview">
                 <div class="game-overlay">
                     <p class="game-text">Game Chistmas</p>
+                    <!-- <a href="#gameModal1" class="video-button" onclick="openModal('gameModal1')">Video GamePlay</a> -->
                 </div>
             </div>
-            <div class="game-card">
+            <div class="game-card" onclick="openModal('gameModal3')">
                 <img src="./assets/Endless Journey.png" alt="Game 3 Preview">
                 <div class="game-overlay">
                     <p class="game-text">Endless Journey</p>
@@ -75,19 +76,23 @@
     <!-- Modals -->
     <div id="gameModal1" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" onclick="closeModal('gameModal1')">&times;</span>
             <div class="game-modal-container">
                 <div class="game-modal-image">
                     <img src="./assets/Adventure-rabbit.png" alt="Game 1 Detail">
                 </div>
                 <h3 class="game-modal-title">Adventure Rabbit</h3>
                 <div class="game-modal-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat </p>
+                    <p>Cuộc phiêu lưu của chú thỏ tinh nghịch bị lạc vào rừng. Người chơi phải điều khiển chú thỏ của
+                        mình vượt qua các thử thách và nguy hiểm để tìm đường về nhà. Sẽ có nhiều thử thach như bẫy, các
+                        câu đố, các chướng ngại vật ...
+                    </p>
+                    <p>- Thể loại: 2D Platform Adventure, Puzzle</p>
+                    <p>- Vai trò: Designer, Developer, Artist</p>
+                    <p>*Các kỹ năng: </p>
+                    <p>- Sử dụng Unity, C# cơ bản.</p>
+                    <p>- Biết cách áp dụng mô hình MDA vào game.</p>
+                    <p>- Thiết kế level, mechanic, element, core loop, UI/UX.</p>
                 </div>
                 <a href="https://www.youtube.com/watch?v=WcIQPGKzwVQ" target="_blank" class="play-button">
                     <span class="button-text">Video GamePlay</span>
@@ -97,10 +102,49 @@
         </div>
     </div>
     <div id="gameModal2" class="modal">
-        <!-- Modal content for Game 2 -->
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('gameModal2')">&times;</span>
+            <div class="game-modal-container">
+                <div class="game-modal-image">
+                    <img src="./assets/Game Chistmas.jpg" alt="Game 2 Detail">
+                </div>
+                <h3 class="game-modal-title">Game Chistmas</h3>
+                <div class="game-modal-description">
+                    <p>Trò chơi được lấy cảm hứng từ lễ giáng sinh. Người chơi điều khiển ông già noel đi thu thập quà.
+                        Khi bắt được tuần lộc sẽ cùng chú tuần lộc bay lên trời và phải tránh những chướng ngại vật</p>
+                    <p>- Thể loại: 2D Platform, Endless</p>
+                    <p>- Vai trò: Designer, Developer</p>
+                    <p>*Các kỹ năng: </p>
+                    <p>- Phân tích game Donkey Kong Country để phát triển chức năng chuyển cảnh từ dưới đất lên trời.
+                    </p>
+                    <p>- Thiết kế chế độ vô tận và spawn quà, chướng ngại vật. </p>
+                    <p>- Thiết kế mechanic, element, UI/UX.</p>
+                </div>
+                <a href="https://youtu.be/PGavIyLQ7kc" target="_blank" class="play-button">
+                    <span class="button-text">Video GamePlay</span>
+                    <span class="button-icon">▶</span>
+                </a>
+            </div>
+        </div>
     </div>
     <div id="gameModal3" class="modal">
-        <!-- Modal content for Game 3 -->
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('gameModal3')">&times;</span>
+            <div class="game-modal-container">
+                <div class="game-modal-image">
+                    <img src="./assets/Endless Journey.png" alt="Game 3 Detail">
+                </div>
+                <h3 class="game-modal-title">Endless Journey</h3>
+                <div class="game-modal-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </div>
+                <a href="https://youtu.be/7lKxleIb0bQ" target="_blank" class="play-button">
+                    <span class="button-text">Video GamePlay</span>
+                    <span class="button-icon">▶</span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Add this to your existing JavaScript or create a new file -->
